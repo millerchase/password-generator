@@ -56,10 +56,12 @@ const getPasswordLength = () => {
   passwordLength = parseFloat(prompt("How many character would you like your password? Must be between 8 and 128 characters."));
   if(passwordLength < 8 || passwordLength > 128) {
     alert("Password must be between 8 and 128 charcters!");
-    getPasswordLength();
+    passwordLength = getPasswordLength();
+    return passwordLength;
   } else if (!passwordLength) {
     alert("Numbers Only!");
-    getPasswordLength();
+    passwordLength = getPasswordLength();
+    return passwordLength;
   } else {
     return passwordLength;
   }
